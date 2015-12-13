@@ -4,12 +4,13 @@
 
 %h1 Catalog
 - @products.each do |product|
-  .entry
-    = image_tag(product.image_url_url(:size_200_200)) if product.image_url_url
-    .details
-      %h3= link_to product.title, product_path(product)
-      = sanitize(product.description)
-      .price_line
-        %span.price= sprintf("$%0.02f", product.price)
-        = button_to 'Add to Cart', line_items_path(product_id: product)
+  .store
+    .entry
+      = image_tag(product.image_url_url(:size_200_200)) if product.image_url_url
+      .details
+        %h3= link_to product.title, product_path(product)
+        = sanitize(product.description)
+        .price_line
+          %span.price= sprintf("$%0.02f", product.price)
+          = button_to 'Add to Cart', line_items_path(product_id: product)
 

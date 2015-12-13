@@ -1,6 +1,29 @@
-%p#notice= notice
+- model_class = Cart
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Product
+      %th Number
+      %th Total
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @cart.line_items.each do |item|
+      %tr
+        %td= item.product.title
+        %td= item.quantity
+        %td.item_price= number_to_currency(item.total_price)
+        %td= link_to 'Delete', item, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'
+
+    %tr.total_line
+      %td.total_text{:colspan => "2"} Total:
+      %td.total_cell= number_to_currency(@cart.total_price)
 
 
-= link_to 'Edit', edit_cart_path(@cart)
-\|
-= link_to 'Back', carts_path
+
+= link_to t('.back', :default => t("helpers.links.back")), store_path, :class => 'btn btn-default'
+= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} , :class => 'btn btn-danger'
+
+

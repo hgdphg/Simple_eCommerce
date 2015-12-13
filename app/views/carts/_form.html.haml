@@ -1,10 +1,5 @@
-= form_for @cart do |f|
-  - if @cart.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cart.errors.count, "error")} prohibited this cart from being saved:"
-      %ul
-        - @cart.errors.full_messages.each do |msg|
-          %li= msg
-
-  .actions
-    = f.submit 'Save'
+= form_for @cart, html: { class: "form form-horizontal cart" } do |f|
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), carts_path, :class => 'btn btn-default'

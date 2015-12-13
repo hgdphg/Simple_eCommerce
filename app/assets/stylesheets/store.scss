@@ -3,38 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 
-.entry {
-  overflow: auto;
-  margin-top: 1em;
-  border-top: 1px dotted #77d;
-  min-height: 220px;
-}
+.store {
+  .entry {
+    overflow: auto;
+    margin-top: 1em;
+    border-top: 1px dotted #77d;
+    min-height: 220px;
+  }
 
-img {
-  width: 200px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  position: absolute;
-}
+  img {
+    width: 200px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    position: absolute;
+  }
 
-h3 {
-  margin-bottom: 2px;
-}
+  h3 {
+    margin-bottom: 2px;
+  }
 
-p, div.price_line {
-  margin-top: 0.5em;
-  margin-bottom: 0.8em;
-  align: bottom;
-}
+  p, div.price_line {
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+    align: bottom;
+  }
 
-.details {
-  margin-left: 220px;
-}
+  .details {
+    margin-left: 220px;
+  }
 
-.price {
+  .price {
 
-  color: #666;
-  font-weight: bold;
-  font-size: 150%;
-  margin-right: 3em;
+    color: #666;
+    font-weight: bold;
+    font-size: 150%;
+    margin-right: 3em;
+  }
 }
