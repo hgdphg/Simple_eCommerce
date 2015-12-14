@@ -40,9 +40,9 @@
           = yield
         .col-lg-3
           .well.sidebar-nav
-            %h3= link_to "Cart", cart_path(@cart)
-            %div.cart
-              = render template: "carts/_cart_mini.html.haml"
+            %div#cart
+              - @sidebar = 1
+              = render @cart
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header Sidebar

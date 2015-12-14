@@ -12,5 +12,5 @@
         = sanitize(product.description)
         .price_line
           %span.price= sprintf("$%0.02f", product.price)
-          = button_to 'Add to Cart', line_items_path(product_id: product, number: 1)
+          = button_to 'Add to Cart', line_items_path(product_id: product, number: 1), remote: true
 

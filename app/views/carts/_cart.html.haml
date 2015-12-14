@@ -1,21 +1,26 @@
+- if !@cart.line_items.empty?
+  %h3= link_to "Cart", cart_path(@cart)
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Product
+        %th Number
+        -if @sidebar != 1
+          %th
+        %th Total
+        -if @sidebar != 1
+          %th=t '.actions', :default => t("helpers.actions")
+    %tbody
+      = render(cart.line_items)
 
-%table.table.table-striped
+      %tr.total_line
+        -if @sidebar != 1
+          %td.total_text{:colspan => "3"} Total:
+        -else
+          %td.total_text{:colspan => "2"} Total:
+        %td.total_cell= number_to_currency(cart.total_price)
 
-  %thead
-    %tr
-      %th Product
-      %th Number
-      %th
-      %th Total
-      %th=t '.actions', :default => t("helpers.actions")
-  %tbody
-    = render(cart.line_items)
-
-    %tr.total_line
-      %td.total_text{:colspan => "3"} Total:
-      %td.total_cell= number_to_currency(cart.total_price)
-
-
-= link_to t('.back', :default => t("helpers.links.back")), store_path, :class => 'btn btn-default'
-= button_to 'Empty cart', cart, method: :delete, data: {confirm: 'Are you sure?'} , :class => 'btn btn-danger'
+  -if @sidebar != 1
+    = link_to t('.back', :default => t("helpers.links.back")), store_path, :class => 'btn btn-default'
+  = button_to 'Empty cart', cart, method: :delete, data: {confirm: 'Are you sure?'} , :class => 'btn btn-danger'
 

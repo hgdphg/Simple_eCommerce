@@ -1,9 +1,11 @@
 %tr
   %td= line_item.product.title
   %td= line_item.quantity
-  %td
-    = button_to 'Add', line_items_path(product_id: line_item.product, number: 1), :class => 'btn btn-xs btn-default'
-    = button_to 'Reduce', line_items_path(product_id: line_item.product, number: -1), :class => 'btn btn-xs btn-default'
+  -if @sidebar != 1
+    %td
+      = button_to 'Add', line_items_path(product_id: line_item.product, number: 1), :class => 'btn btn-xs btn-default'
+      = button_to 'Reduce', line_items_path(product_id: line_item.product, number: -1), :class => 'btn btn-xs btn-default'
 
   %td.item_price= number_to_currency(line_item.total_price)
-  %td= link_to 'Delete', line_item, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'
+  -if @sidebar != 1
+    %td= link_to 'Delete', line_item, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger'
