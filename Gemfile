@@ -29,6 +29,8 @@ gem 'rmagick'
 #gem 'mini_magick'
 gem 'carrierwave'
 
+gem 'bcrypt'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
