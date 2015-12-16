@@ -22,5 +22,7 @@
 
   -if @sidebar != 1
     = link_to t('.back', :default => t("helpers.links.back")), store_path, :class => 'btn btn-default'
-  = button_to 'Empty cart', cart, method: :delete, data: {confirm: 'Are you sure?'} , :class => 'btn btn-danger'
+  = button_to 'Check out', new_order_path, method: :get, :class => "btn btn-success"
+  -if @sidebar != 1
+    = button_to 'Empty cart', cart, method: :delete, data: {confirm: 'Are you sure?'} , :class => 'btn btn-danger'
 

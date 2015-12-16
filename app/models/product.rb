@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   validates :price, :numericality => { :greater_than => 0 }
 
   has_many :line_items
+  has_many :order, through: :line_items
 
   before_destroy :ensure_not_referenced_by_any_line_item
 

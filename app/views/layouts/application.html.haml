@@ -40,9 +40,10 @@
           = yield
         .col-lg-3
           .well.sidebar-nav
-            %div#cart
-              - @sidebar = 1
-              = render @cart
+            - if @cart
+              %div#cart
+                - @sidebar = 1
+                = render @cart
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header Sidebar
