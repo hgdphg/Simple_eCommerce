@@ -1,0 +1,15 @@
+.page-header
+  %h1 Login
+= form_tag({:action => 'new'} ,{ class: "form form-horizontal user" }) do
+  .form-group
+    = label_tag :username, 'User name:', :class => 'control-label col-lg-2'
+    .col-lg-10
+      = text_field_tag :username, nil, class:'form-controls'
+  .form-group
+    = label_tag :password, 'Password:', :class => 'control-label col-lg-2'
+    .col-lg-10
+      = password_field_tag :password, nil, class:'form-controls'
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = submit_tag "Login",class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), store_path, :class => 'btn btn-default'

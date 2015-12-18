@@ -32,7 +32,6 @@
             %li= link_to "Link 2", "/path2"
             %li= link_to "Link 3", "/path3"
             %li= link_to "Link 4", "/path3"
-
     .container
       .row
         .col-lg-9
@@ -40,6 +39,15 @@
           = yield
         .col-lg-3
           .well.sidebar-nav
+            - id = session[:user_id]
+            - if id
+              - name = session[:username]
+              %h4
+                Wellcome you, #{name}
+              = button_to 'Logout', logout_path, method: :delete , :class => "btn btn-xs btn-primary"
+            - else
+              %h4 Wellcome you to our site
+              = button_to 'Login', login_path, method: :get, :class => "btn btn-xs btn-success"
             - if @cart
               %div#cart
                 - @sidebar = 1
