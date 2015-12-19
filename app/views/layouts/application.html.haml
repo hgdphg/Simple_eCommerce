@@ -58,5 +58,12 @@
               %li= link_to "Link 1", "/path1"
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
+
+            - if id
+              %h3 Admin navigation
+              %ul.nav.nav-list
+                %li= link_to "Orders", orders_path
+                %li= link_to "Products", products_path
+                %li= link_to "Users", users_path
       %footer
         %p &copy; Company 2015
