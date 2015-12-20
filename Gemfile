@@ -30,7 +30,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'bcrypt'
-
+gem 'rails_12factor'
 gem 'puma'
 gem 'cowsay'
 
