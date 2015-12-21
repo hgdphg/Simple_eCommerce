@@ -31,8 +31,6 @@ gem 'carrierwave'
 
 gem 'bcrypt'
 gem 'rails_12factor'
-gem 'puma'
-gem 'cowsay'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

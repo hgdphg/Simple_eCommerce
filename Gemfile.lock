@@ -56,7 +56,6 @@ GEM
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
     concurrent-ruby (1.0.0)
-    cowsay (0.2.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -113,7 +112,6 @@ GEM
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
-    puma (2.15.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -220,7 +218,6 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
-  cowsay
   factory_girl_rails
   faker
   haml
@@ -232,7 +229,6 @@ DEPENDENCIES
   less
   less-rails
   pg (~> 0.15)
-  puma
   rails (= 4.2.5)
   rails_12factor
   rmagick
